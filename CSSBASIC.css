@@ -1,0 +1,18 @@
+body {
+    background-color: aliceblue;
+}
+
+h1 {
+    color: #800;
+    font-family: Arial;
+    text-align: center;
+}
+
+#intro{
+    text-align: justify;
+
+}
+
+#github{
+    line-height: 2;
+}
