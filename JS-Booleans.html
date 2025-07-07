@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<title>JS Boolean</title>
+<meta charset="UTF-8">
+</head> 
+
+<body> 
+<h1>JS Boolean</h1>
+<script>  
+
+
+// Boolean values can be true or false
+true
+false
+
+
+// > <, >=, <=, ==, ===, !=, !== are comparison operators
+console.log(5 == 5); // true
+console.log(5 == '5'); // true (loose equality, type coercion)  
+console.log(5 === 5); // true (strict equality, no type coercion)
+console.log(5 === '5'); // false (strict equality, different types)
+console.log(5 != 3); // true
+console.log(5 !== '5'); // true (strict inequality, different types)
+console.log(5 > 3); // true
+console.log(5 < 3); // false
+console.log(5 >= 5); // true
+console.log(5 <= 3); // false
+console.log(5>3); // true
+console.log(5<3); // false
+
+
+// && and || are logical operators
+console.log(true && false); // false (logical AND)
+console.log(true || false); // true (logical OR)
+console.log(!true); // false (logical NOT)
+console.log(!false); // true (logical NOT)
+
+'true'
+'false'
+
+console.log(typeof true); // "boolean" 
+console.log(typeof false); // "boolean"
+console.log(typeof 'true'); // "string"
+console.log(typeof 'false'); // "string"
+
+
+// Boolean values can be used in conditional statements
+if (true) {
+    console.log("This will always execute because the condition is true.");
+} else {
+    console.log("This will never execute.");
+}
+
+// falsy values in JavaScript
+// 0, "", null, undefined, NaN are considered falsy
+
+if (0) {
+    console.log("This will never execute because 0 is falsy.");
+} else {
+    console.log("This will execute because 0 is falsy.");
+}
+
+// Truthy values in JavaScript
+// Non-zero numbers, non-empty strings, objects, arrays are considered truthy
+if ("Hello") {
+    console.log("This will execute because non-empty strings are truthy.");
+} else {
+    console.log("This will never execute.");
+}
+
+// Short-circuit evaluation
+// In JavaScript, logical operators can short-circuit evaluation
+
+// Ternary operator is a shorthand for if-else statements
+condition ? valueIfTrue : valueIfFalse; // ternary operator
+// Example of a ternary operator
+
+true ? 'truthy' : 'falsy'; // ternary operator
+false ? 'truthy' : 'falsy'; // ternary operator
+
+// Guard operators
+// The guard operator is a way to provide a default value if the condition is false
+false && console.log("This will never execute because the condition is false."); 
+
+// Default Operators
+// The default operator is a way to provide a default value if the condition is false
+
+const curency = 'PHP' || 'USD'; // Default to 'USD' if curency is falsy
+console.log(curency); // 'PHP' (because 'PHP' is truthy)
+
+
+
+
+
+
+</script> 
+
+</body>
+</html>
