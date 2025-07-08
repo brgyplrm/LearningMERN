@@ -9,30 +9,86 @@
   <p>Click the button to increase the cart count.</p>
 
   <!-- using `` for template string -->
-  <button id="Cost" onclick="console.log(`Cafe Receipt: $${cartCount}`)">Show Quantity</button>
+  <button id="Cost" onclick="console.log(`Cafe Receipt: $${cartTotal}`)">Show Quantity</button>
+
+  <button id="cartCount" onclick="console.log(`Cart Count: ${cartCount}`)">Show Cart Count</button>
   
   <button id="buyaCoffee" onclick=" 
   coffeePrice += 5;
-  cartCount += coffeePrice; 
-  console.log(`You ordered coffee $${coffeePrice}`)">Buy a Coffee ($5)</button>
+  cartTotal += coffeePrice; 
+  cartCount++;
+
+  console.log(`You ordered coffee $${coffeePrice}`)
+  
+  if (cartCount == 10){
+    alert(`You cannot order more than 10 items. Your current order is ${cartCount} items.`);
+  } else {
+    console.log(`You have ordered ${cartCount} items. You can order more.`);
+  }
+  
+  ">Buy a Coffee ($5)</button>
 
   <button id="buy2Bagel" onclick=" 
   bagelPrice += 3;
-  cartCount += bagelPrice; 
-  console.log(`You ordered Bagel $${bagelPrice}`)">Buy a Bagel ($3)</button>
+  cartTotal += bagelPrice; 
+  cartCount++;
+  console.log(`You ordered Bagel $${bagelPrice}`)
+  
+  if (cartCount == 10){
+    alert(`You cannot order more than 10 items. Your current order is ${cartCount} items.`);
+  } else {
+    console.log(`You have ordered ${cartCount} items. You can order more.`);
+  }
+
+  ">Buy a Bagel ($3)</button>
 
   <button id="buyaSoup" onclick=" 
   soupPrice += 9;
-  cartCount += soupPrice; 
-  console.log(`You ordered soup $${soupPrice}`)">Buy a Soup ($9)</button>
+  cartTotal += soupPrice; 
+  cartCount++;
 
-  <button id="resetButton" 
-  onclick="cartCount = 0; 
-  console.log(`Cart Quantity reset to ${cartCount}`)">Reset Cart</button>
+  console.log(`You ordered soup $${soupPrice}`)
+   
+  if (cartCount == 10){
+    alert(`You cannot order more than 10 items. Your current order is ${cartCount} items.`);
+  } else {
+    console.log(`You have ordered ${cartCount} items. You can order more.`);
+  }
+
+  ">Buy a Soup ($9)</button>
+
+  <button onclick="
+  if (cartCount == 0) {
+    alert('Cart is empty. You cannot remove items.');
+  } else {
+    cartCount--; 
+    console.log(`Removed an item from cart. Current total: $${cartCount}`);
+  }
+">Remove Items from Cart</button>
+
+  <button onclick="
+  if (cartCount == 0) {
+    alert('Cart is empty. You cannot remove items.');
+  } else {
+    cartCount -= 2;
+    console.log(`Removed 2 items from cart. Current total: $${cartCount}`);
+  }
+">Remove Items from Cart (-2)</button>
+
+  <button onclick="
+  if (cartCount == 0) {
+    alert('Cart is empty. You cannot remove items.');
+  } else {
+    cartCount -= 3;
+    console.log(`Removed 3 items from cart. Current total: $${cartCount}`);
+  }
+">Remove Items from Cart (-3)</button>
   
 
 <script>  
   let cartCount = 0;
+  let cartTotal = 0;
+  // Prices for each item
   let coffeePrice = 0;
   let bagelPrice = 0;
   let soupPrice = 0;
