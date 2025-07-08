@@ -11,7 +11,29 @@
     }
 
     f1(); // Call the function
+
+    // parameterized function
+    function f2(param) {
+      console.log("Function f2 called with parameter: " + param);
+    }
+    f2("Hello, World!"); // Call the function with a parameter
+    // function with return value
+    function f3() {
+      return "Function f3 called";
+    }
+    let result = f3(); // Call the function and store the return value
+    console.log(result); // Output the return value
+
+    // function with multiple parameters
+    function f4(param1, param2) {
+      return "Function f4 called with parameters: " + param1 + ", " + param2;
+    }
+    let result2 = f4("Hello", "World!"); // Call the function with multiple parameters
+    console.log(result2); // Output the return value
     
+
+    
+
   </script>
 </body>
 </html>
