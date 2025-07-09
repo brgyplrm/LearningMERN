@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head><title>Cart Counter</title>
+    <meta charset="UTF-8">
+  </head>
+
+<body>
+  <h1>Cart Counter</h1>
+  <p>Click the button to increase the cart count.</p>
+
+  <!-- using `` for template string -->
+  <button id="showCartquantity" onclick="console.log(`Cart Quantity: ${cartCount}`)">Show Quantity</button>
+  
+  <button id="addCartButton" onclick=" 
+  cartCount++; 
+  console.log(`Added in Cart ${cartCount}`)">Add to cart</button>
+
+  <button id="add2CartButton" onclick=" 
+  cartCount+=2; 
+  console.log(`Added in Cart ${cartCount}`)">Add 2 to Cart</button>
+
+  <button id="add4CartButton" onclick=" 
+  cartCount+=4; 
+  console.log(`Added in Cart ${cartCount}`)">Add 4 to Cart</button>
+
+  <button id="resetButton" 
+  onclick="cartCount = 0; 
+  console.log(`Cart Quantity reset to ${cartCount}`)">Reset Cart
+  </button>
+  
+
+<script>  
+  let cartCount = 0;
+
+
+</script>
+</body>  
+</html>
