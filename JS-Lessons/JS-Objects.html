@@ -39,7 +39,55 @@
 
     console.log(name); // This will throw an error because 'name' is not defined in the global scope
 
+    const obj1 = {
+        message : "this is an object",
+    };
 
+    const obj2 = obj1; // Assigning obj1 to obj2, both refer to the same object in memory
+
+    obj1.message = "this is a modified object"; // Modifying the message property of obj1
+
+    console.log("obj1:", obj1); // Logging obj1 to the console
+    console.log("obj2:", obj2); // Logging obj2 to the console, it will reflect the change made to obj1
+
+    const obj3 = {
+        message: "this is a different object",
+    };
+
+    console.log("obj1 === obj2:", obj1 === obj2); // true, both refer to the same object
+    console.log("obj1 === obj3:", obj1 === obj3); // false, obj1 and obj3 are different objects
+
+    const obj4 = {
+        message: "we are going to move this reference to varable",
+    };
+
+    // Two ways to assign the message property of obj4 to a variable
+    // 1. Using dot notation
+    /*const message = obj4.message; 
+    console.log("Message using dot notation:", message);*/ // Logging the message to the console
+
+    // 2. Using bracket notation if have same name as variable also called destructuring
+    // This is useful when the property name is dynamic or contains special characters
+    const {message} = obj4;
+    console.log("Message using bracket notation:", message); // Logging the message to the console
+
+    const obj5 = {
+        //message: message, // Assigning the value of the variable 'message' to the property 'message' of obj5 
+        message, // This is shorthand for the above line, where the property name is the same as the variable name
+
+        // Adding a method to the object
+        // A method is a function that is a property of an object
+        /*method: function functionObject() {
+            console.log("This is a method inside an object");
+        }*/
+
+        // shorthand for method: functionObject
+        method() {
+            console.log("This is a method inside an object");
+        }
+    }
+    console.log("obj5:", obj5); // Logging obj5 to the console
+    obj5.method(); // Calling the method of obj5
 </script>
 </body>
 </html>
