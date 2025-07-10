@@ -7,6 +7,39 @@
 <body>
 <script>
 
+    // JavaScript Object Example
+    // An object is a collection of properties, where each property is defined as a key-value pair.
+    // Objects can contain various data types, including strings, numbers, booleans, arrays, and even other objects.
+    const person = {
+
+        // Properties of the object
+        name: "John",
+        age: 30,
+        /*greet: function() {
+            console.log("Hello, my name is " + this.name);
+        }*/
+    };
+
+    console.log("Person Object:", person); // Logging the entire object to the console
+    // Accessing object properties
+    console.log("Name:", person.name); // Accessing property using dot notation
+    console.log("Age:", person["age"]); // Accessing property using bracket notation
+
+    person.isStudent = true; // Adding a new property to the object
+    console.log("Is Student:", person.isStudent); // Accessing the newly added property
+
+    delete person.isStudent; // Deleting a property from the object
+    console.log("After Deletion, Is Student:", person.isStudent); // Accessing the deleted property (should be undefined)
+
+    console.log(person); // Logging the entire object to the console
+
+    console.log("Keys of the person object:", Object.keys(person)); // Getting keys of the object
+    console.log("Values of the person object:", Object.values(person)); // Getting values of the object
+    console.log("Entries of the person object:", Object.entries(person)); // Getting key-value pairs of the object
+
+    console.log(name); // This will throw an error because 'name' is not defined in the global scope
+
+
 </script>
 </body>
 </html>
