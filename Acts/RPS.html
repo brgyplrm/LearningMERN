@@ -27,7 +27,7 @@
   // Determine the winner
   result = WhoWins(userChoice, computerChoice);
 
-  alert(`You picked: ${userChoice}\nComputer picked: ${computerChoice}\nResult: ${result}`);
+  alert(`You picked: ${userChoice}\nComputer picked: ${computerChoice}\nResult: ${result}\n Score: Win - ${score.win}, Lose - ${score.lose}, Tie - ${score.tie}`);
 ">Rock</button>
 
   <button id="playPaper" onclick="
@@ -43,7 +43,7 @@
   // Determine the winner
   result = WhoWins(userChoice, computerChoice);
 
-  alert(`You picked: ${userChoice}\nComputer picked: ${computerChoice}\nResult: ${result}`);
+  alert(`You picked: ${userChoice}\nComputer picked: ${computerChoice}\nResult: ${result}\n Score: Win - ${score.win}, Lose - ${score.lose}, Tie - ${score.tie}`);
 ">Paper</button>
 
   <button id="playScissors" onclick="
@@ -59,13 +59,36 @@
   // Determine the winner
   result = WhoWins(userChoice, computerChoice);
 
-  alert(`You picked: ${userChoice}\nComputer picked: ${computerChoice}\nResult: ${result}`);
+  alert(`You picked: ${userChoice}\nComputer picked: ${computerChoice}\nResult: ${result}\n Score: Win - ${score.win}, Lose - ${score.lose}, Tie - ${score.tie}`);
 ">Scissors</button>
+
+<button onclick="
+
+  // Reset the score
+  score.win = 0;
+  score.lose = 0;
+  score.tie = 0;
+
+  localStorage.removeItem('score');
+
+  alert('Score has been reset to 0.');
+
+  ">Reset Score</button>
 
   <script>
     let computerChoice = '';
     let userChoice = '';
     let result = '';
+
+    // Initialize score from localStorage or set to default values
+    // This will keep track of the number of wins, losses, and ties
+    // Right side of the code is the default value and Left side is the key in localStorage
+    // If localStorage is empty, it will use the default values
+    const score = JSON.parse(localStorage.getItem('score')) || {
+      win: 0,
+      lose: 0,
+      tie: 0
+    };
 
     function ComputerPick() {
       // Generate a random choice for the computer
@@ -85,18 +108,30 @@
     function WhoWins(userChoice, computerChoice) {
       // Determine the winner
       if (computerChoice === userChoice) {
+        score.tie++;
         result = 'It\'s a tie!';
       } else if (userChoice === 'Rock' && computerChoice === 'Scissors') {
+        score.win++;
         result = 'You win!';
       } else if (userChoice === 'Scissors' && computerChoice === 'Paper') {
+
+        score.win++;
         result = 'You win!';
       } else if (userChoice === 'Paper' && computerChoice === 'Rock') {
+        score.win++;
         result = 'You win!';
       } else {
         result = 'Computer wins!';
+        score.lose++;
       }
+
+      // Save the updated score to localStorage
+      localStorage.setItem('score', JSON.stringify(score));
+
       return result;
     }
+
+    
   </script>
 </body>
 </html>
