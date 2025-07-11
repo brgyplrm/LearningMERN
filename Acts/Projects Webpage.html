@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>DOM Projects</title>
+    <meta charset="UTF-8">
+</head>
+  
+<body>
+  <!--First project: 
+      Toggle Subscribe Button Text
+      This function toggles the text of the subscribe button between "Subscribe" and "Subscribed" -->
+
+  <!-- changing the button text when Clicked -->
+  <p>Subscribe Button</p>
+  <button class="subButton" onclick="
+
+  toggleSubscribe();
+
+  ">Subscribe</button>
+  <hr>
+
+  <!-- 
+  Second Project Shipping Cost Calculator
+  This function calculates the shipping cost based on the price
+  if the price is under ₱40 + ₱10 shipping and if over ₱40 it's free shipping
+  -->
+
+  <p>Shipping Cost Calculator</p>
+  <p>Items that under ₱40 gets additional ₱10 for shipping</p>
+  <p>Items that over ₱40 gets free shipping</p>
+
+  <p class="receipt"></p>
+  <p class="itemPrice"></p>
+  <p class="shippingCost"></p>
+  <p class="totalCost"></p>
+
+  <!-- Input (function in html)-->
+  <input class="priceInput" placeholder="Enter price of item" onkeydown="
+  keyPress(event);
+  "/>
+  
+  <button class="calcButton" onclick="
+  calculateShipping();
+  ">Calculate Shipping Cost</button>
+
+  <script>  
+
+  function keyPress(event){
+    // Check if the Enter key is pressed
+    if (event.key === 'Enter') {
+      // Call the function to calculate shipping
+      calculateShipping();
+    }
+  }
+  function calculateShipping(){
+    const itemPriceInput = document.querySelector('.priceInput');
+    
+
+    // Get the value from the input field and convert it to a number
+    const priceItem = Number(itemPriceInput.value);
+
+    if (isNaN(priceItem) || priceItem < 0) {
+      alert('Please enter a valid price.');
+      return;
+    }
+
+    let totalCost = 0;
+
+    if (priceItem < 40) {
+      totalCost = priceItem + 10;
+      document.querySelector('.shippingCost').innerHTML = `Shipping Cost: ₱10`;
+    } else {
+      totalCost = priceItem;
+      document.querySelector('.shippingCost').innerHTML = `Shipping Cost: Free`;
+    }
+
+    // Display the receipt
+    document.querySelector('.receipt').innerHTML = `Receipt`;
+
+    document.querySelector('.itemPrice').innerHTML = `Item Price: ₱${priceItem}`;
+    document.querySelector('.totalCost').innerHTML = `Total Cost: ₱${totalCost}`;
+  }
+
+
+  /* first project: Toggle Subscribe Button Text
+      This function toggles the text of the subscribe button between "Subscribe" and "Subscribed" */
+  function toggleSubscribe() {
+    const subButton = document.querySelector('.subButton');
+
+    if (subButton.innerHTML === 'Subscribe') {
+      subButton.innerHTML = 'Subscribed';
+    } else {
+      subButton.innerHTML = 'Subscribe';
+    }
+
+  /* Second Project Shipping Cost Calculator
+     This function calculates the shipping cost based on the price
+     if the price is under ₱40 + ₱10 shipping and if over ₱40 it's free shipping
+  */
+
+  let priceItem = 0;
+  const shippingCost = 10;
+  let totalCost = 0;
+  }
+  </script>
+</body>
+</html>

@@ -27,7 +27,6 @@
   // Determine the winner
   result = WhoWins(userChoice, computerChoice);
 
-  alert(`You picked: ${userChoice}\nComputer picked: ${computerChoice}\nResult: ${result}\n Score: Win - ${score.win}, Lose - ${score.lose}, Tie - ${score.tie}`);
 ">Rock</button>
 
   <button id="playPaper" onclick="
@@ -40,10 +39,8 @@
 
   console.log('Computer picked: ' + computerChoice);
 
-  // Determine the winner
   result = WhoWins(userChoice, computerChoice);
 
-  alert(`You picked: ${userChoice}\nComputer picked: ${computerChoice}\nResult: ${result}\n Score: Win - ${score.win}, Lose - ${score.lose}, Tie - ${score.tie}`);
 ">Paper</button>
 
   <button id="playScissors" onclick="
@@ -56,11 +53,15 @@
 
   console.log('Computer picked: ' + computerChoice);
 
-  // Determine the winner
   result = WhoWins(userChoice, computerChoice);
 
-  alert(`You picked: ${userChoice}\nComputer picked: ${computerChoice}\nResult: ${result}\n Score: Win - ${score.win}, Lose - ${score.lose}, Tie - ${score.tie}`);
 ">Scissors</button>
+
+<p class="js-resetScore"></p>
+<p class="js-result"></p>
+<p class="js-userandcomChoice"></p>
+
+<p class="js-scoreBoard"></p>
 
 <button onclick="
 
@@ -71,7 +72,7 @@
 
   localStorage.removeItem('score');
 
-  alert('Score has been reset to 0.');
+  resetScore();
 
   ">Reset Score</button>
 
@@ -125,12 +126,30 @@
         score.lose++;
       }
 
+      document.querySelector('.js-result').innerHTML = `${result}`;
+      document.querySelector('.js-userandcomChoice').innerHTML = `You picked: ${userChoice} <br> Computer picked: ${computerChoice}`;
+  
+      document.querySelector('.js-scoreBoard').innerHTML = `Win: ${score.win}, Lose: ${score.lose}, Tie: ${score.tie}`;
+
+
       // Save the updated score to localStorage
       localStorage.setItem('score', JSON.stringify(score));
 
       return result;
     }
 
+    // Update the scoreboard display
+    document.querySelector('.js-scoreBoard').innerHTML = `Win: ${score.win}, Lose: ${score.lose}, Tie: ${score.tie}`;
+
+    function resetScore() {
+
+      document.querySelector('.js-scoreBoard').innerHTML = `Win: ${score.win}, Lose: ${score.lose}, Tie: ${score.tie}`;
+
+      document.querySelector('.js-userandcomChoice').innerHTML = '';
+      document.querySelector('.js-result').innerHTML = '';
+
+      document.querySelector('.js-resetScore').innerHTML = 'Score has been reset!';
+    }
     
   </script>
 </body>

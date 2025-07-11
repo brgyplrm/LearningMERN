@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>JS DOM</title>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+  <button>JS DOM Button 1</button>
+
+  <button class="jsB2">JS DOM Button 2</button>
+  <script>
+    /**
+    // JavaScript DOM Manipulation Example
+    console.log(document.title); // Log the current document title
+    document.title = "JS DOM Lesson"; // Change the document title
+
+    console.log(document.body); // Log the current body content
+    
+    console.log(document.body.innerHTML); // Log the current body HTML content
+
+    // document.body.innerHTML = 'JS DOM Lesson'; // Change the body content
+
+    document.body.innerHTML = '<button>JS DOM Button</button>'; // Change the body content to a button 
+     */
+
+    // document.querySelector let us get any element from the page and put it inside the JavaScript
+
+
+    console.log(document.querySelector('button'));
+
+    document.querySelector('button').innerHTML = 'JS DOM Button 1'; // Change the button text
+
+    console.log(document.querySelector('.jsB2')); // Get the second button using its class
+
+    // putting the dom in variable
+
+    const jsButton2 = document.querySelector('.jsB2');
+
+    console.log(jsButton2); // Log the second button
+
+
+    /**
+     document.title = "JS DOM";
+      document.body.innerHTML = 'JS DOM Lesson';
+     */
+    
+  </script>
+</body>
+</html>
