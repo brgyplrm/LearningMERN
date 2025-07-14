@@ -3,6 +3,8 @@
 <head>
     <title>DOM Projects</title>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="Project-C.css"> 
 </head>
   
 <body>
@@ -12,7 +14,7 @@
 
   <!-- changing the button text when Clicked -->
   <p>Subscribe Button</p>
-  <button class="subButton" onclick="
+  <button class="subButton sButton" onclick="
 
   toggleSubscribe();
 
@@ -35,11 +37,11 @@
   <p class="totalCost"></p>
 
   <!-- Input (function in html)-->
-  <input class="priceInput" placeholder="Enter price of item" onkeydown="
+  <input class="priceInput pInput" placeholder="Enter price of item" onkeydown="
   keyPress(event);
   "/>
   
-  <button class="calcButton" onclick="
+  <button class="calcButton cButton" onclick="
   calculateShipping();
   ">Calculate Shipping Cost</button>
 
@@ -89,8 +91,10 @@
 
     if (subButton.innerHTML === 'Subscribe') {
       subButton.innerHTML = 'Subscribed';
+      subButton.classList.add('is-subscribed'); // Add class for styling
     } else {
       subButton.innerHTML = 'Subscribe';
+      subButton.classList.remove('is-subscribed'); // Remove class if toggled back
     }
 
   /* Second Project Shipping Cost Calculator

@@ -1,0 +1,34 @@
+.sButton {
+  border: none; 
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+.is-subscribed {
+  background-color: green; /* Change background color for "Subscribed" state */
+  color: white; /* Ensure text is readable */
+}
+
+.cButton {
+  border: none; 
+  font-weight: bold;
+  background-color: green;
+  color: black;
+  padding: 10px 10px 10px 10px;
+  border-radius: 70px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.pInput {
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
