@@ -1,4 +1,35 @@
-.playrock{
-  border:none;
-  
+body {
+  background-color: #fff;
+}
+/*This file is part of the Rock-Paper-Scissors game CSS styles.
+It styles the game elements including buttons and SVG icons. */ 
+.playRock, .playPaper, .playScissors {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+/* SVG icons for Rock, Paper, and Scissors */
+.RockSvg, .PaperSvg, .ScissorsSvg {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background-color: white;
+  vertical-align: middle;
+  margin: 0px;
+  rotate: 90deg;  
+}
+
+
+.t1{
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+.choice-container {
+  display: flex;
+  gap: 15px;
+  margin: 20px;
 }
