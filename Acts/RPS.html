@@ -3,6 +3,8 @@
 <head>
     <title>Let's Play: Rock Paper Scissors</title>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="RPS-C.css">
 </head>
 <body>
   <p>Click the button to play Rock Paper Scissors.</p>
@@ -14,7 +16,7 @@
     <li>Paper beats Rock</li>
   </ul>
 
-  <button id="playRock" onclick="
+  <button class="playRock" onclick="
   // Get the user's choice
   userChoice = 'Rock';
 
@@ -25,11 +27,11 @@
   console.log('Computer picked: ' + computerChoice);
 
   // Determine the winner
-  result = WhoWins(userChoice, computerChoice);
+  result = WhoWins(userChoice, computerChoice);">
+      <img width="48" height="48" src="https://img.icons8.com/fluency/48/rock-hand.png" alt="rock-hand"/>
+  </button>
 
-">Rock</button>
-
-  <button id="playPaper" onclick="
+  <button class="playPaper" onclick="
   // Get the user's choice
   userChoice = 'Paper';
 
@@ -39,11 +41,11 @@
 
   console.log('Computer picked: ' + computerChoice);
 
-  result = WhoWins(userChoice, computerChoice);
+  result = WhoWins(userChoice, computerChoice);">
+    <img width="48" height="48" src="https://img.icons8.com/fluency/48/paper-hand.png" alt="paper-hand"/>
+  </button>
 
-">Paper</button>
-
-  <button id="playScissors" onclick="
+  <button class="playScissors" onclick="
   // Get the user's choice
   userChoice = 'Scissors';
 
@@ -53,9 +55,9 @@
 
   console.log('Computer picked: ' + computerChoice);
 
-  result = WhoWins(userChoice, computerChoice);
-
-">Scissors</button>
+  result = WhoWins(userChoice, computerChoice);">
+    <img width="48" height="48" src="https://img.icons8.com/fluency/48/hand-scissors.png" alt="hand-scissors"/>
+  </button>
 
 <p class="js-resetScore"></p>
 <p class="js-result"></p>
